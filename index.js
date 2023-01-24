@@ -12,3 +12,6 @@ app.use(router)
 app.listen(process.env.PORT || 3000, () => {
   console.log('server is listening')
 })
+
+// for testing
+module.exports = app

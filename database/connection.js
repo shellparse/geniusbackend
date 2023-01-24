@@ -5,7 +5,7 @@ const { MongoClient } = require('mongodb')
 let client
 // if in development connect to mongo memory server otherwise use live database on mongo atlas
 async function connect (callback) {
-  if (process.env.NODE_ENV === 'development') {
+  if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test') {
     const { MongoMemoryServer } = require('mongodb-memory-server')
     const mongod = await MongoMemoryServer.create()
     client = new MongoClient(mongod.getUri())
